@@ -1,10 +1,12 @@
 package com.example.RydeProject_EntityService.models;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,31 @@ public class Driver extends BaseModel{
 
     //1 : many - drivers has many bookings
 
+    private String phoneNumber;
+
+
+//    @OneToOne(mappedBy = "driver" , cascade = CascadeType.ALL)
+//    private Car car;
+
+    @Enumerated(value = EnumType.STRING)
+    private DriverApprovalStatus driverApprovalStatus;
+
+    @OneToOne
+    private ExactLocation lastKnownLocation;
+
+    @OneToOne
+    private ExactLocation home;
+
+    private String activeCity;
+
+    @DecimalMin(value="0.0" , message = "rating must be greater than or equal to 0.0")
+    @DecimalMax(value="5.0" , message = "rating must be less than or equal to 5.0")
+    private Double rating;
+
+    private boolean isAvailabel;
+
+
     @OneToMany(mappedBy = "driver")
-    private List<Booking> dBookings = new ArrayList<>();
+    @Fetch(FetchMode.SUBSELECT)
+    private List<Booking> bookings;
 }

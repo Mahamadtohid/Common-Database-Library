@@ -14,6 +14,7 @@ import com.example.RydeProject_EntityService.models.Colors;
 @NoArgsConstructor
 public class Car extends BaseModel {
 
+    @Column(unique = true , nullable = false)
     private String numberPlate;
 
     @ManyToOne

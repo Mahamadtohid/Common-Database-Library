@@ -1,9 +1,8 @@
 package com.example.RydeProject_EntityService.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -34,4 +33,17 @@ public class Passenger extends BaseModel{
 
     @OneToMany(mappedBy = "passenger")
     private List<Booking> pBooking = new ArrayList<>();
+
+    @OneToOne
+    private Booking activeBooking;
+
+    @DecimalMin(value="0.0" , message = "rating must be greater than or equal to 0.0")
+    @DecimalMax(value="5.0" , message = "rating must be less than or equal to 5.0")
+    private Double rating;
+
+    @OneToOne
+    private ExactLocation lastKnownLocation;
+
+    @OneToOne
+    private ExactLocation home;
 }
