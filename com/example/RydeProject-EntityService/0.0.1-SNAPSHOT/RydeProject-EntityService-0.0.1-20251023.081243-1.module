@@ -1,0 +1,77 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.example",
+    "module": "RydeProject-EntityService",
+    "version": "0.0.1-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "RydeProject-EntityService-0.0.1-SNAPSHOT-plain.jar",
+          "url": "RydeProject-EntityService-0.0.1-SNAPSHOT-plain.jar",
+          "size": 13931,
+          "sha512": "93eb1a38a82b621bc508a6d35825ebaa13e5532f9b4cff0534c3f97444417a15920e6fb79c490518f4d696d86692f846437aee66b098991298b223db26e3ae08",
+          "sha256": "a800286b2ca2b22075393fee2d383b3b1f3dbab0f3435c6e3984fde0be102203",
+          "sha1": "06cab9433691bbb6ad26766f06603dc8cb624b89",
+          "md5": "1827b4b985a39f5b6ae66b5134f9a49d"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-data-jpa"
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-annotations",
+          "version": {
+            "requires": "2.17.0"
+          }
+        },
+        {
+          "group": "com.mysql",
+          "module": "mysql-connector-j"
+        }
+      ],
+      "files": [
+        {
+          "name": "RydeProject-EntityService-0.0.1-SNAPSHOT-plain.jar",
+          "url": "RydeProject-EntityService-0.0.1-SNAPSHOT-plain.jar",
+          "size": 13931,
+          "sha512": "93eb1a38a82b621bc508a6d35825ebaa13e5532f9b4cff0534c3f97444417a15920e6fb79c490518f4d696d86692f846437aee66b098991298b223db26e3ae08",
+          "sha256": "a800286b2ca2b22075393fee2d383b3b1f3dbab0f3435c6e3984fde0be102203",
+          "sha1": "06cab9433691bbb6ad26766f06603dc8cb624b89",
+          "md5": "1827b4b985a39f5b6ae66b5134f9a49d"
+        }
+      ]
+    }
+  ]
+}

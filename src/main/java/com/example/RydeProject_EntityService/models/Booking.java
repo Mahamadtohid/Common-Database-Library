@@ -3,6 +3,10 @@ package com.example.RydeProject_EntityService.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import com.example.RydeProject_EntityService.models.Review;
+import com.example.RydeProject_EntityService.models.BookingStatus;
+import com.example.RydeProject_EntityService.models.Driver;
+import com.example.RydeProject_EntityService.models.Passenger;
 
 import java.util.Date;
 import java.util.List;
@@ -19,10 +23,10 @@ public class Booking extends BaseModel{
 //    @OneToOne(cascade ={ CascadeType.PERSIST , CascadeType.REMOVE})
 //    private Review review;
         @OneToOne(mappedBy = "booking")
-        private com.example.RydeReviewService.models.Review review;
+        private Review review;
 
     @Enumerated(value = EnumType.STRING)// Stores enum as it is  string in database default in tinyint
-    private com.example.RydeReviewService.models.BookingStatus bookingStatus;
+    private BookingStatus bookingStatus;
 
     @Temporal(value = TemporalType.TIMESTAMP) // By default its timestamp itself but we are entioning specifically
     private Date startTime;
@@ -33,9 +37,9 @@ public class Booking extends BaseModel{
     private Long totalDistance;
 
     @ManyToOne
-    private com.example.RydeReviewService.models.Driver driver;
+    private Driver driver;
 
     @ManyToOne
-    private com.example.RydeReviewService.models.Passenger passenger;
+    private Passenger passenger;
 
 }
