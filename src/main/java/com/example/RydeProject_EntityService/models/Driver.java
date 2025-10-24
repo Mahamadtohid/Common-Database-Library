@@ -29,8 +29,8 @@ public class Driver extends BaseModel{
     private String phoneNumber;
 
 
-//    @OneToOne(mappedBy = "driver" , cascade = CascadeType.ALL)
-//    private Car car;
+    @OneToOne(mappedBy = "driver" , cascade = CascadeType.ALL)
+    private Car car;
 
     @Enumerated(value = EnumType.STRING)
     private DriverApprovalStatus driverApprovalStatus;
