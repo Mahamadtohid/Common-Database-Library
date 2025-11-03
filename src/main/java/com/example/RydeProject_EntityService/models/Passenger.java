@@ -41,9 +41,9 @@ public class Passenger extends BaseModel{
     @DecimalMax(value="5.0" , message = "rating must be less than or equal to 5.0")
     private Double rating;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExactLocation lastKnownLocation;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExactLocation home;
 }
